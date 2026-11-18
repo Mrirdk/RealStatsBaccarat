@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootOverlay"
+    android:layout_width="290dp"
+    android:layout_height="wrap_content"
+    android:background="#E612161F"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Thanh tiêu đề dùng để kéo di chuyển cửa sổ nổi -->
+    <LinearLayout
+        android:id="@+id/dragHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF1E2636"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="✥ REAL-STATS BACCARAT"
+            android:textColor="#FFD700"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnMinimize"
+            android:layout_width="28dp"
+            android:layout_height="24dp"
+            android:background="#33FFFFFF"
+            android:gravity="center"
+            android:text="—"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnClose"
+            android:layout_width="28dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="6dp"
+            android:background="#CCFF3B30"
+            android:gravity="center"
+            android:text="✕"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Khung nội dung chính (Ẩn đi khi bấm thu gọn) -->
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="6dp">
+
+        <TextView
+            android:id="@+id/tvSignal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#26FFD700"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="CHỜ NHẬP KẾT QUẢ THỰC TẾ"
+            android:textColor="#00FF88"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDistribution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Thực tế (0 ván): P 0% | B 0% | T 0%"
+            android:textColor="#E0E0E0"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tvMarkov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Xác suất chuyển nhịp: Chờ dữ liệu"
+            android:textColor="#66D9EF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStreak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Đang đi: Trống"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tvZScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Độ lệch hộp bài: Cân bằng (0.00σ)"
+            android:textColor="#B0BEC5"
+            android:textSize="11sp" />
+
+        <!-- Hàng nút nhập kết quả thực tế -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPlayer"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:backgroundTint="#1E88E5"
+                android:text="+P"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnBanker"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#E53935"
+                android:text="+B"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnTie"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#43A047"
+                android:text="+T"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Hàng nút hoàn tác / đổi bàn mới -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnUndo"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:backgroundTint="#546E7A"
+                android:text="Xóa 1 tay"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:backgroundTint="#37474F"
+                android:text="Đổi bàn (Reset)"
+                android:textColor="#FFCC80"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
